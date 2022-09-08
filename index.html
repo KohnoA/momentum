@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+    <div class="weather">
+      <input type="text" class="city"/>
+      <div class="temperature-wrapper">
+        <i class="weather-icon owf"></i>
+        <div class="temperature"></div>
+      </div>
+      <div class="clouds"></div>
+      <div class="wind-speed"></div>
+      <div class="humidity"></div>
+      <div class="weather-error"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" placeholder="[Enter name]"/>
+    </div>
+    <div class="player-controls2">
+      <div class="volume">
+        <div class="song-title">Aqua Caelestis</div>
+        <button class="volume-icon" type="button">
+          <svg width="20" height="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+            <path d="M832 352v1088q0 26-19 45t-45 19-45-19l-333-333h-262q-26 0-45-19t-19-45v-384q0-26 19-45t45-19h262l333-333q19-19 45-19t45 19 19 45zm384 544q0 76-42.5 141.5t-112.5 93.5q-10 5-25 5-26 0-45-18.5t-19-45.5q0-21 12-35.5t29-25 34-23 29-36 12-56.5-12-56.5-29-36-34-23-29-25-12-35.5q0-27 19-45.5t45-18.5q15 0 25 5 70 27 112.5 93t42.5 142zm256 0q0 153-85 282.5t-225 188.5q-13 5-25 5-27 0-46-19t-19-45q0-39 39-59 56-29 76-44 74-54 115.5-135.5t41.5-173.5-41.5-173.5-115.5-135.5q-20-15-76-44-39-20-39-59 0-26 19-45t45-19q13 0 26 5 140 59 225 188.5t85 282.5zm256 0q0 230-127 422.5t-338 283.5q-13 5-26 5-26 0-45-19t-19-45q0-36 39-59 7-4 22.5-10.5t22.5-10.5q46-25 82-51 123-91 192-227t69-289-69-289-192-227q-36-26-82-51-7-4-22.5-10.5t-22.5-10.5q-39-23-39-59 0-26 19-45t45-19q13 0 26 5 211 91 338 283.5t127 422.5z" fill="#fff"/>
+          </svg>
+        </button>
+        <div class="volume-wrapper">
+          <div class="volume-range">
+            <div class="volume-progress"></div>
+          </div>
+          <div class="mute"></div>
+        </div>
+      </div>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <div class="duration-wrapper">
+        <div class="time-audio">00:00</div>
+        <div class="audio-duration"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="overlay"></div>
+    <div class="quote-wrapper__flex">
+      <button class="change-quote"></button>
+      <div class="quote-wrapper">
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+    <div class="footer-wrapper">
+      <button class="links">Links</button>
+      <div class="links-menu">
+        <a class="rss-link" href="https://rs.school/js/">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="110" height="44" viewBox="0 0 242 90">
+            <title>Rolling Scopes School</title>
+            <path fill="#fff" d="M137.197 3.257c-6.927 1.609-10.367 5.259-10.401 11.036-0.039 6.727 3.729 9.816 15.812 12.966 5.873 1.53 7.869 4.182 5.091 6.758-3.153 2.922-9.323 1.027-10.1-3.105-0.385-2.062-0.366-2.056-6.837-1.696l-5.735 0.318 0.276 1.806c0.425 2.784 2.722 7.082 4.68 8.758 5.802 4.964 21.78 4.455 27.25-0.872l1.6-1.558 0.307 1.811c1.125 6.663 7.892 12.923 15.677 14.504l2.5 0.509-1.477 1.935c-4.874 6.384-5.012 19.44-0.276 26.221 7.248 10.375 27.644 10.074 34.355-0.506l1.249-1.969v9.391h31.61v-10.097h-18.878v-29.416h-12.732l-0.025 4.5c-0.022 3.676-0.121 4.343-0.548 3.642-2.419-3.968-7.13-7.265-11.748-8.218l-2.489-0.515 2.526-1.898c7.858-5.906 12.752-16.681 11.495-25.307-3.305-22.669-35.958-23.020-48.395-0.523-0.802 1.448-1.485 2.68-1.519 2.737s-1.153-0.956-2.489-2.247c-2.77-2.683-4.995-3.665-12.558-5.538-7.037-1.744-8.477-2.967-6.112-5.192 2.25-2.115 7.149-0.745 8.252 2.309 0.647 1.789 0.529 1.772 8.010 1.277l4.326-0.287-0.276-1.724c-1.277-7.987-11.329-12.386-22.424-9.807zM2.635 23.268v19.755h12.732v-15.806h1.294c2.042 0 3.277 1.502 7.214 8.781l3.682 6.803 7.079 0.121c3.893 0.067 7.076 0.003 7.076-0.141 0-2.225-7.934-15.064-10.136-16.402l-1.207-0.734 2.436-1.274c9.031-4.728 7.321-18.273-2.576-20.396-1.249-0.267-7.574-0.467-14.884-0.467h-12.71v19.755zM195.401 6.952c19.87 5.186 18.051 33.064-2.824 43.242-21.268 10.37-40.222-6.654-30.113-27.045 5.898-11.897 20.984-19.316 32.934-16.194zM24.14 12.417c4.472 2.261 1.505 6.435-4.829 6.795l-3.943 0.225v-7.585l3.842 0.006c2.199 0.003 4.306 0.242 4.93 0.557zM188.373 15.91c-3.496 0.928-7.051 4.461-7.054 7.009-0.006 4.163 3.322 5.664 8.558 3.862 3.203-1.102 4.019-1.102 4.612 0.003 1.004 1.879-2.287 3.794-4.207 2.447-0.965-0.675-4.523 1.454-4.559 2.728-0.056 1.918 4.798 2.644 7.771 1.162 9.442-4.705 6.761-14.805-3.032-11.427-3.915 1.35-4.756 1.409-4.756 0.323 0-1.704 2.663-2.936 3.825-1.775 0.475 0.475 4.075-1.912 4.075-2.703 0-1.181-3.189-2.177-5.237-1.631zM174.201 25.383c-2.095 1.516-2.194 1.122 1.648 6.576 2.365 3.355 3.274 5.012 3.184 5.797-0.157 1.342-1.662 1.699-2.72 0.644-0.672-0.672-0.847-0.619-2.438 0.745-4.019 3.443 2.090 6.398 6.629 3.209 4.987-3.504 4.995-5.678 0.037-12.918-3.845-5.617-4.022-5.729-6.342-4.050zM13.044 49.621c-7.183 1.133-11.388 5.333-11.444 11.43-0.056 6.221 3.977 9.765 13.967 12.265 6.123 1.533 8.139 2.703 8.139 4.719 0 5.678-10.164 5.11-11.239-0.627-0.377-2.002-0.329-1.991-6.812-1.64l-5.749 0.312 0.287 1.8c1.311 8.252 6.109 11.686 16.799 12.021 8.477 0.264 11.391-0.557 15.092-4.258l2.534-2.534 0.931 1.257c5.386 7.284 23.58 7.774 29.554 0.793 1.747-2.039 3.707-5.881 3.907-7.65 0.141-1.246 0.101-1.268-5.223-2.883l-5.363-1.628-0.72 2.166c-2.453 7.383-11.714 7.467-13.748 0.127-0.692-2.495-0.608-8.454 0.157-11.022 1.845-6.207 9.638-7.481 12.8-2.090 1.319 2.25 0.965 2.208 6.95 0.855 5.698-1.288 5.453-1.060 4.154-3.859-5.153-11.087-22.475-13.688-31.66-4.759l-2.562 2.492-1.063-1.814c-2.649-4.523-11.005-6.846-19.682-5.473zM134.342 49.632c-4.863 0.844-9.667 3.904-12.381 7.883-0.726 1.066-0.745 0.979-0.768-3.187l-0.023-4.281h-12.732v13.61h-12.732v-13.61h-12.732v39.513h12.732v-15.806h12.732v15.806h12.732v-8.933l1.375 2.073c5.721 8.634 23.414 10.15 31.466 2.694 9.318-8.626 7.49-28.249-3.136-33.671-4.101-2.093-11.298-3.004-16.535-2.095zM20.183 57.727c0.734 0.38 1.595 1.409 2.062 2.467l0.802 1.817 8.578-0.413-0.281 2.239c-0.371 2.962-0.537 3.074-2.998 1.986-1.159-0.512-4.402-1.505-7.211-2.211-6.646-1.665-7.473-2.022-7.813-3.375-0.63-2.503 3.766-4.112 6.865-2.509zM141.871 59.279c6.502 1.806 7.819 16.729 1.789 20.278-4.503 2.649-10.201 0.394-11.537-4.57-2.655-9.863 2.264-17.786 9.748-15.708zM194.951 59.268c7.554 2.098 7.4 19.074-0.191 21.119-6.103 1.642-10.164-2.599-10.133-10.581 0.034-8.294 3.963-12.305 10.325-10.536z"></path>
+          </svg>
+        </a>
+        <a class="GitHub-link" href="https://github.com/KohnoA">
+          <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 64 64" width="44px" height="44px">
+            <path d="M32,6C17.641,6,6,17.641,6,32c0,12.277,8.512,22.56,19.955,25.286c-0.592-0.141-1.179-0.299-1.755-0.479V50.85 c0,0-0.975,0.325-2.275,0.325c-3.637,0-5.148-3.245-5.525-4.875c-0.229-0.993-0.827-1.934-1.469-2.509 c-0.767-0.684-1.126-0.686-1.131-0.92c-0.01-0.491,0.658-0.471,0.975-0.471c1.625,0,2.857,1.729,3.429,2.623 c1.417,2.207,2.938,2.577,3.721,2.577c0.975,0,1.817-0.146,2.397-0.426c0.268-1.888,1.108-3.57,2.478-4.774 c-6.097-1.219-10.4-4.716-10.4-10.4c0-2.928,1.175-5.619,3.133-7.792C19.333,23.641,19,22.494,19,20.625 c0-1.235,0.086-2.751,0.65-4.225c0,0,3.708,0.026,7.205,3.338C28.469,19.268,30.196,19,32,19s3.531,0.268,5.145,0.738 c3.497-3.312,7.205-3.338,7.205-3.338c0.567,1.474,0.65,2.99,0.65,4.225c0,2.015-0.268,3.19-0.432,3.697 C46.466,26.475,47.6,29.124,47.6,32c0,5.684-4.303,9.181-10.4,10.4c1.628,1.43,2.6,3.513,2.6,5.85v8.557 c-0.576,0.181-1.162,0.338-1.755,0.479C49.488,54.56,58,44.277,58,32C58,17.641,46.359,6,32,6z"/><path d="M33.813,57.93C33.214,57.972,32.61,58,32,58C32.61,58,33.213,57.971,33.813,57.93z"/><path d="M37.786,57.346c-1.164,0.265-2.357,0.451-3.575,0.554C35.429,57.797,36.622,57.61,37.786,57.346z"/><path d="M32,58c-0.61,0-1.214-0.028-1.813-0.07C30.787,57.971,31.39,58,32,58z"/><path d="M29.788,57.9c-1.217-0.103-2.411-0.289-3.574-0.554C27.378,57.61,28.571,57.797,29.788,57.9z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="other-footer">
+        <button class="todo">Todo</button>
+        <div class="todo-list">
+          <h4 class="todo-title">Just Do It</h4>
+          <div class="todo-content"></div>
+          <input type="text" class="todo-input" placeholder="write your plans">
+          <button class="todo-refresh">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 64 64">
+              <title>loop2</title>
+              <path fill="#fff" d="M55.605 10.395c-5.851-6.388-14.26-10.395-23.605-10.395-17.673 0-32 14.327-32 32h6c0-14.359 11.641-26 26-26 7.689 0 14.596 3.339 19.356 8.644l-9.356 9.356h22v-22l-8.395 8.395z"></path>
+              <path fill="#fff" d="M58 32c0 14.359-11.641 26-26 26-7.689 0-14.596-3.339-19.356-8.644l9.356-9.356h-22v22l8.395-8.395c5.851 6.389 14.26 10.395 23.605 10.395 17.673 0 32-14.327 32-32h-6z"></path>
+              </svg>
+          </button>
+          <button class="add-todo">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 491.86 491.86" style="enable-background:new 0 0 491.86 491.86;" xml:space="preserve" fill="#fff" width="16px" height="16px">
+              <path d="M465.167,211.614H280.245V26.691c0-8.424-11.439-26.69-34.316-26.69s-34.316,18.267-34.316,26.69v184.924H26.69
+              C18.267,211.614,0,223.053,0,245.929s18.267,34.316,26.69,34.316h184.924v184.924c0,8.422,11.438,26.69,34.316,26.69
+              s34.316-18.268,34.316-26.69V280.245H465.17c8.422,0,26.69-11.438,26.69-34.316S473.59,211.614,465.167,211.614z"/>
+            </svg>
+          </button>
+        </div>
+        <button class="settings">
+          <svg aria-label="Настройки" class="_ab6-" color="#fff" fill="#fff" height="36px" role="img" viewBox="0 0 24 24" width="36px"><circle cx="12" cy="12" fill="none" r="8.635" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle><path d="M14.232 3.656a1.269 1.269 0 01-.796-.66L12.93 2h-1.86l-.505.996a1.269 1.269 0 01-.796.66m-.001 16.688a1.269 1.269 0 01.796.66l.505.996h1.862l.505-.996a1.269 1.269 0 01.796-.66M3.656 9.768a1.269 1.269 0 01-.66.796L2 11.07v1.862l.996.505a1.269 1.269 0 01.66.796m16.688-.001a1.269 1.269 0 01.66-.796L22 12.93v-1.86l-.996-.505a1.269 1.269 0 01-.66-.796M7.678 4.522a1.269 1.269 0 01-1.03.096l-1.06-.348L4.27 5.587l.348 1.062a1.269 1.269 0 01-.096 1.03m11.8 11.799a1.269 1.269 0 011.03-.096l1.06.348 1.318-1.317-.348-1.062a1.269 1.269 0 01.096-1.03m-14.956.001a1.269 1.269 0 01.096 1.03l-.348 1.06 1.317 1.318 1.062-.348a1.269 1.269 0 011.03.096m11.799-11.8a1.269 1.269 0 01-.096-1.03l.348-1.06-1.317-1.318-1.062.348a1.269 1.269 0 01-1.03-.096" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+            <circle cx="12" cy="12" fill="none" r="8.635" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+            <path d="M14.232 3.656a1.269 1.269 0 01-.796-.66L12.93 2h-1.86l-.505.996a1.269 1.269 0 01-.796.66m-.001 16.688a1.269 1.269 0 01.796.66l.505.996h1.862l.505-.996a1.269 1.269 0 01.796-.66M3.656 9.768a1.269 1.269 0 01-.66.796L2 11.07v1.862l.996.505a1.269 1.269 0 01.66.796m16.688-.001a1.269 1.269 0 01.66-.796L22 12.93v-1.86l-.996-.505a1.269 1.269 0 01-.66-.796M7.678 4.522a1.269 1.269 0 01-1.03.096l-1.06-.348L4.27 5.587l.348 1.062a1.269 1.269 0 01-.096 1.03m11.8 11.799a1.269 1.269 0 011.03-.096l1.06.348 1.318-1.317-.348-1.062a1.269 1.269 0 01.096-1.03m-14.956.001a1.269 1.269 0 01.096 1.03l-.348 1.06 1.317 1.318 1.062-.348a1.269 1.269 0 011.03.096m11.799-11.8a1.269 1.269 0 01-.096-1.03l.348-1.06-1.317-1.318-1.062.348a1.269 1.269 0 01-1.03-.096" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+        <div class="settings-list">
+          <h4 class="settings-title">Settings</h4>
+          <div class="settings-widget">
+            <div class="widget-subtitle">Hide widget</div>
+            <div class="widget-wrapper">
+              <ul class="widget-list__left">
+                <li class="widget-item">
+                  <input type="checkbox" id="time" class="widget-input" checked>
+                  <label for="time">Time</label>
+                </li>
+                <li class="widget-item">
+                  <input type="checkbox" id="data" class="widget-input" checked>
+                  <label for="data">Data</label>
+                </li>
+                <li class="widget-item">
+                  <input type="checkbox" id="greeting" class="widget-input" checked>
+                  <label for="greeting">Greeting</label>
+                </li>
+                <li class="widget-item">
+                  <input type="checkbox" id="quotes" class="widget-input" checked>
+                  <label for="quotes">Quotes</label>
+                </li>
+              </ul>
+              <ul class="widget-list__right">
+                <li class="widget-item">
+                  <input type="checkbox" id="weather" class="widget-input" checked>
+                  <label for="weather">Weather</label>
+                </li>
+                <li class="widget-item">
+                  <input type="checkbox" id="audio" class="widget-input" checked>
+                  <label for="audio">Audio Player</label>
+                </li>
+                <li class="widget-item">
+                  <input type="checkbox" id="todo" class="widget-input" checked>
+                  <label for="todo">Todo list</label>
+                </li>
+                <li class="widget-item">
+                  <input type="checkbox" id="links" class="widget-input" checked>
+                  <label for="links">Links</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="settings-api">
+            <div class="api-subtitle">API Source</div>
+            <ul class="api-list lang-list">
+              <li class="api-item lang-item">
+                <input type="radio" id="rss-gh" value="rss-gh" name="Image" checked>
+                <label for="rss-gh">RSSGitHub</label>
+              </li>
+              <li class="api-item lang-item">
+                <input type="radio" value="uapi" id="uapi" name="Image">
+                <label for="uapi">Unsplash API</label>
+              </li>
+              <li class="api-item lang-item">
+                <input type="radio" value="fapi" id="fapi" name="Image">
+                <label for="fapi">Flickr API</label>
+              </li>
+            </ul>
+            <div class="img-tags-wrapper">
+              <label class="label-tags" for="tags">Enter your tags</label>
+              <input type="text" class="img-tags" id="tags" placeholder="#your tag">
+            </div>
+          </div>
+          <div class="settings-lang">
+            <div class="lang-subtitle">Language</div>
+            <ul class="lang-list">
+              <li class="lang-item">
+                <input type="radio" id="en" value="en" name="lang" checked>
+                <label for="en">English</label>
+              </li>
+              <li class="lang-item">
+                <input type="radio" value="bel" id="bel" name="lang">
+                <label for="bel">Belarusian</label>
+              </li>
+              <li class="lang-item">
+                <input type="radio" value="ru" id="ru" name="lang">
+                <label for="ru">Russian</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="js/index.js"></script>
+</body>
+</html>
